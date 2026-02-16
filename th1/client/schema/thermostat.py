@@ -147,6 +147,12 @@ class Derogation(pydantic.BaseModel):
     derogation_type: str
     started_at: datetime.datetime
 
+class Message(pydantic.BaseModel):
+    subject: str
+    id: int
+    body: str
+    timestamp: int
+    status: str
 
 class Info(pydantic.BaseModel):
     date: datetime.datetime
@@ -167,7 +173,7 @@ class Info(pydantic.BaseModel):
     temperature: float
     mode_settings: ModeSettings
     geofencing_distance: GeofencingDistance
-    messages: list[str]
+    messages: list[Message]
     humidity: float
     externalCoefficient: float
     internalCoefficient: float
